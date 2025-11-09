@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata: 
-  name: test1
+  name: test
   namespace: argocd
 spec: 
   destination: 
-    namespace: test1
+    namespace: test
     server: "https://kubernetes.default.svc"
   project: default
   source: 
-    path: apps/test1
+    path: apps/test
     repoURL: "https://github.com/solas98/cicdtest"
     targetRevision: main
   syncPolicy:
