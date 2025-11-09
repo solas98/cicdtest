@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: test2
+  namespace: argocd
+spec: 
+  destination: 
+    namespace: test2
+    server: "https://kubernetes.default.svc"
+  project: default
+  source: 
+    path: apps/test2
+    repoURL: "https://github.com/solas98/cicdtest"
+    targetRevision: master
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
