@@ -11,7 +11,7 @@ spec:
   source: 
     path: apps/test2
     repoURL: "https://github.com/solas98/cicdtest"
-    targetRevision: master
+    targetRevision: main
   syncPolicy:
     automated:
       allowEmpty: true
